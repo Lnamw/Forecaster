@@ -50,7 +50,7 @@
     int minTemp = [city.dailyWeatherForecast.weekData.minTemp intValue];
     int maxTemp = [city.dailyWeatherForecast.weekData.maxTemp intValue];
     
-    cell.dateLabel.text = city.dailyWeatherForecast.weekData.day;
+//    cell.dateLabel.text = city.dailyWeatherForecast.weekData.day;
     cell.summaryWeatherLabel.text = city.dailyWeatherForecast.summary;
     cell.minTempLabel.text = [NSString stringWithFormat:@"%d F°", minTemp];
     cell.maxTempLabel.text = [NSString stringWithFormat:@"%d F°", maxTemp];
