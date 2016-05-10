@@ -10,7 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ForecastWeekWeatherTableViewController.h"
 #import "WeatherTableViewCell.h"
+#import "DetailWeatherViewController.h"
 #import "City.h"
+#import "Daily.h"
 
 
 @interface WeatherTableViewController ()
@@ -109,6 +111,8 @@
         Daily *dailyWeather = [[Daily alloc] init];
         dailyWeather.summary = daily[@"summary"];
         
+        NSMutableArray *weekDataArray = [[NSMutableArray alloc] initWithCapacity:0];
+        
         NSArray *dailyData = daily[@"data"];
         for (NSDictionary *dict in dailyData) {
             WeekData *dailyWeekData = [[WeekData alloc] init];
@@ -116,14 +120,15 @@
             dailyWeekData.minTemp = dict[@"temperatureMin"];
             dailyWeekData.maxTemp = dict[@"temperatureMax"];
             
-            dailyWeather.weekData = dailyWeekData;
-            city.dailyWeatherForecast = dailyWeather;
+            
+//            dailyWeather.weekData = dailyWeekData;
+            [weekDataArray addObject:dailyWeekData];
+            
         }
 
-        
+        dailyWeather.weekDataArray = weekDataArray;
 
-        
-        
+        city.dailyWeatherForecast = dailyWeather;
         
         dispatch_async(dispatch_get_main_queue(),^{
             [self.tableView reloadData];
@@ -182,12 +187,13 @@
      }
      
      if ([segue.identifier isEqualToString:@"DetailForecastSegue"]) {
-         ForecastWeekWeatherTableViewController *vc = (ForecastWeekWeatherTableViewController *)[segue destinationViewController];
+         DetailWeatherViewController *vc = (DetailWeatherViewController *)[segue destinationViewController];
          
          NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
          City *city = self.citiesArray[indexPath.row];
          vc.citySelected = city;
      }
+     
  }
 
 

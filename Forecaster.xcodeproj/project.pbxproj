@@ -23,6 +23,7 @@
 		AAFD5D3C1CE0A04500C62589 /* WeekWeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD5D3B1CE0A04500C62589 /* WeekWeatherTableViewCell.m */; };
 		AAFD5D3F1CE0A2FC00C62589 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD5D3E1CE0A2FC00C62589 /* Daily.m */; };
 		AAFD5D431CE0A39900C62589 /* WeekData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD5D421CE0A39900C62589 /* WeekData.m */; };
+		AAFD5D461CE1E58900C62589 /* DetailWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFD5D451CE1E58900C62589 /* DetailWeatherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		AAFD5D3E1CE0A2FC00C62589 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		AAFD5D411CE0A39900C62589 /* WeekData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekData.h; sourceTree = "<group>"; };
 		AAFD5D421CE0A39900C62589 /* WeekData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekData.m; sourceTree = "<group>"; };
+		AAFD5D441CE1E58900C62589 /* DetailWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWeatherViewController.h; sourceTree = "<group>"; };
+		AAFD5D451CE1E58900C62589 /* DetailWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				AAFD5D241CDE511200C62589 /* WeatherTableViewController.m */,
 				AAFD5D281CDE5D9400C62589 /* EnterCityViewController.h */,
 				AAFD5D291CDE5D9400C62589 /* EnterCityViewController.m */,
+				AAFD5D441CE1E58900C62589 /* DetailWeatherViewController.h */,
+				AAFD5D451CE1E58900C62589 /* DetailWeatherViewController.m */,
 				AAFD5D371CE09D2F00C62589 /* ForecastWeekWeatherTableViewController.h */,
 				AAFD5D381CE09D2F00C62589 /* ForecastWeekWeatherTableViewController.m */,
 			);
@@ -231,6 +236,7 @@
 				AAFD5D331CDF5B8100C62589 /* Currently.m in Sources */,
 				AAFD5D3C1CE0A04500C62589 /* WeekWeatherTableViewCell.m in Sources */,
 				AAFD5D251CDE511200C62589 /* WeatherTableViewController.m in Sources */,
+				AAFD5D461CE1E58900C62589 /* DetailWeatherViewController.m in Sources */,
 				AAFD5D431CE0A39900C62589 /* WeekData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

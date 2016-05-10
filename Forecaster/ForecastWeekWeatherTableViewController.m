@@ -8,6 +8,7 @@
 
 #import "ForecastWeekWeatherTableViewController.h"
 #import "City.h"
+#import "Daily.h"
 #import "WeatherTableViewCell.h"
 #import "WeekWeatherTableViewCell.h"
 
@@ -21,8 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.daysArray = [[NSMutableArray alloc] initWithArray:self.citySelected.dailyWeatherForecast.weekDataArray];
 
-    self.daysArray = [NSMutableArray arrayWithObject:self.citySelected];
+    [self.tableView reloadData];
     
 }
 
@@ -38,20 +40,28 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.daysArray.count;
+    return self.daysArray.count
+    ;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    WeekWeatherTableViewCell *cell = (WeekWeatherTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"DailyForecastCell" forIndexPath:indexPath];
     
-    City *city = self.daysArray[indexPath.row];
+    WeekData *dailyData = self.daysArray[indexPath.row];
     
-    int minTemp = [city.dailyWeatherForecast.weekData.minTemp intValue];
-    int maxTemp = [city.dailyWeatherForecast.weekData.maxTemp intValue];
+    int day = [dailyData.day intValue];
+    int minTemp = [dailyData.minTemp intValue];
+    int maxTemp = [dailyData.maxTemp intValue];
     
-//    cell.dateLabel.text = city.dailyWeatherForecast.weekData.day;
-    cell.summaryWeatherLabel.text = city.dailyWeatherForecast.summary;
+    NSDate *day2 = [[NSDate alloc] initWithTimeIntervalSince1970:day];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    NSString *dateString = [formatter stringFromDate:day2];
+    
+    
+    cell.dateLabel.text = dateString;
+    cell.summaryWeatherLabel.text = self.citySelected.dailyWeatherForecast.summary;
     cell.minTempLabel.text = [NSString stringWithFormat:@"%d F°", minTemp];
     cell.maxTempLabel.text = [NSString stringWithFormat:@"%d F°", maxTemp];
     
@@ -95,6 +105,7 @@
 */
 
 /*
+ 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

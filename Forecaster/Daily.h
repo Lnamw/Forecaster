@@ -14,7 +14,9 @@
 
 @property (nonatomic, copy) NSString *summary;
 
-@property (nonatomic, strong) WeekData *weekData;
+//@property (nonatomic, strong) WeekData *weekData;
+
+@property (nonatomic, strong) NSMutableArray *weekDataArray;
 
 
 @end

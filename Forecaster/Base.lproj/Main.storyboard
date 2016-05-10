@@ -70,7 +70,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="ais-cg-xqu" kind="show" identifier="DetailForecastSegue" id="dWa-Qs-fO4"/>
+                        <segue destination="H6j-4B-RVR" kind="show" identifier="DetailForecastSegue" id="92b-Yd-eID"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMa-qd-4F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,6 +119,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q65-sF-I9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1862" y="71"/>
+        </scene>
+        <!--Detail Weather View Controller-->
+        <scene sceneID="Twb-GX-EUS">
+            <objects>
+                <viewController id="H6j-4B-RVR" customClass="DetailWeatherViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TB6-bV-Mf1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bet-cS-xJD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ckh-7h-iXb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="21" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GH-nl-EvB">
+                                <rect key="frame" x="20" y="134" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="21" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPD-cp-tXN">
+                                <rect key="frame" x="20" y="192" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="21" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB8-us-WdL">
+                                <rect key="frame" x="20" y="248" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AT-CX-kRi">
+                                <rect key="frame" x="211" y="378" width="179" height="30"/>
+                                <state key="normal" title="See Forecast for the week"/>
+                                <connections>
+                                    <action selector="wekForecastButtonPressed:" destination="H6j-4B-RVR" eventType="touchUpInside" id="dOu-Tm-8iV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sa-mX-0fH">
+                                <rect key="frame" x="211" y="378" width="179" height="30"/>
+                                <state key="normal" title="See Forecast for the week"/>
+                                <connections>
+                                    <segue destination="ais-cg-xqu" kind="show" identifier="weekForecastSegue" id="j0y-Ls-VXX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1AT-CX-kRi" firstAttribute="centerX" secondItem="ckh-7h-iXb" secondAttribute="centerX" id="BoM-Nz-eX2"/>
+                            <constraint firstItem="DPD-cp-tXN" firstAttribute="top" secondItem="6GH-nl-EvB" secondAttribute="bottom" constant="37" id="I8G-Tj-bYa"/>
+                            <constraint firstItem="DPD-cp-tXN" firstAttribute="leading" secondItem="ckh-7h-iXb" secondAttribute="leading" constant="20" id="PzO-9h-ZoY"/>
+                            <constraint firstItem="6GH-nl-EvB" firstAttribute="leading" secondItem="ckh-7h-iXb" secondAttribute="leading" constant="20" id="RZy-jl-qmH"/>
+                            <constraint firstItem="rB8-us-WdL" firstAttribute="top" secondItem="DPD-cp-tXN" secondAttribute="bottom" constant="35" id="jeN-6r-jAM"/>
+                            <constraint firstItem="1Sa-mX-0fH" firstAttribute="top" secondItem="TB6-bV-Mf1" secondAttribute="bottom" constant="314" id="kZl-db-0RK"/>
+                            <constraint firstItem="1Sa-mX-0fH" firstAttribute="centerX" secondItem="ckh-7h-iXb" secondAttribute="centerX" id="o6r-wN-tFU"/>
+                            <constraint firstItem="rB8-us-WdL" firstAttribute="leading" secondItem="ckh-7h-iXb" secondAttribute="leading" constant="20" id="uPZ-r0-W5z"/>
+                            <constraint firstItem="6GH-nl-EvB" firstAttribute="top" secondItem="TB6-bV-Mf1" secondAttribute="bottom" constant="70" id="v9A-dG-1h5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deatilSummaryLabel" destination="6GH-nl-EvB" id="YFJ-a2-WB8"/>
+                        <outlet property="iconLabel" destination="DPD-cp-tXN" id="zT7-FO-lY5"/>
+                        <outlet property="temperatureLabel" destination="rB8-us-WdL" id="Rfq-CV-r9V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbO-CP-9w5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="767"/>
         </scene>
         <!--Week Forecast-->
         <scene sceneID="3HV-KH-eqh">
@@ -196,7 +264,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egK-T2-nov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="752"/>
+            <point key="canvasLocation" x="2632" y="767"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ghW-tj-2wp">

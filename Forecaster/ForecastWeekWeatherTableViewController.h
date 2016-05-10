@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) City *citySelected;
 
+
 @property (nonatomic, strong) NSMutableArray *daysArray;
 
 
