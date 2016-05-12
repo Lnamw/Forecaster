@@ -42,7 +42,7 @@
     
     NSLog(@"City is %@", city);
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 
     
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
@@ -61,18 +61,6 @@
         
         newCity.coordinates = coords;
 
-//        if (coords.latitude == 0 && coords.longitude == 0 ) {
-//            
-//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"This is not a City Name. Please type a valid city." preferredStyle:UIAlertControllerStyleAlert];
-//            
-//            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            }];
-//            
-//            [alert addAction:ok];
-//            
-//            [self presentViewController:alert animated:YES completion:nil];
-//        }
-        
         
         [weakSelf.citiesArray addObject:newCity];
         

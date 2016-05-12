@@ -46,6 +46,31 @@
     
     NSLog(@"City is : %@", citychosen);
     
-    [self.delegate cityHasBeenChosen:citychosen];
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+
+    [geoCoder geocodeAddressString:citychosen completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        CLPlacemark *placemark = placemarks[0];
+        
+        CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(placemark.location.coordinate.latitude, placemark.location.coordinate.longitude);
+    
+    if (coords.latitude == 0 && coords.longitude == 0 ) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"This is not a City Name. Please type a valid city." preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        [self.delegate cityHasBeenChosen:citychosen];
+
+    }
+    }];
+        
+    
+//    [self.delegate cityHasBeenChosen:citychosen];
 }
 @end

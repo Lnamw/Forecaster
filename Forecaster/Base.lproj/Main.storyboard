@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" title="Cities" id="bHk-Zz-TeR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8dH-fB-baS">
                             <connections>
-                                <segue destination="tLp-in-Itm" kind="show" identifier="chooseCitySegue" id="CP3-Qz-4DE"/>
+                                <segue destination="tLp-in-Itm" kind="presentation" identifier="chooseCitySegue" id="CP3-Qz-4DE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
